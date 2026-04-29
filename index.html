@@ -40,6 +40,11 @@ body {
     rgba(232, 236, 245, 0.55) 60%,
     rgba(232, 236, 245, 0.92) 100%
   );
+  transition: opacity 1.2s ease;
+}
+
+#topo-bg.revealed::after {
+  opacity: 0;
 }
 
 /* ===================== LAYOUT ===================== */
@@ -94,33 +99,42 @@ body {
   padding: 6px 12px 20px;
 }
 
-.module-list div {
-  padding: 10px 14px;
+.module-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(91,124,255,0.12);
   border-radius: 8px;
+  box-shadow: none;
+  padding: 10px 14px;
+  margin-top: 0;
   margin-bottom: 2px;
   cursor: pointer;
   font-size: 14px;
+  font-family: Georgia, serif;
   line-height: 1.4;
   color: #3a4570;
-  border-bottom: 1px solid rgba(91,124,255,0.12);
   transition: background 0.15s, color 0.15s, padding-left 0.15s;
   position: relative;
 }
 
-.module-list div:hover {
+.module-list button:hover {
   background: rgba(91,124,255,0.08);
   color: #2a3260;
   padding-left: 18px;
+  transform: none;
 }
 
-.module-list div.active {
+.module-list button.active {
   background: linear-gradient(to right, rgba(91,124,255,0.14), rgba(91,124,255,0.05));
   color: #2040cc;
   font-weight: 600;
   padding-left: 18px;
 }
 
-.module-list div.active::before {
+.module-list button.active::before {
   content: "";
   position: absolute;
   left: 0;
@@ -311,7 +325,58 @@ button:hover {
   box-shadow: 0 6px 20px rgba(58,94,232,0.35);
 }
 
-/* ===================== TABLET ===================== */
+/* ===================== LMS BUTTON ===================== */
+.lms-btn {
+  display: block;
+  width: calc(100% - 24px);
+  margin: 0 12px 4px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  color: #3a5ee8;
+  background: transparent;
+  border: 1.5px solid rgba(58,94,232,0.35);
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.15s, border-color 0.15s;
+  margin-top: 0;
+}
+.lms-btn:hover {
+  background: rgba(58,94,232,0.07);
+  border-color: rgba(58,94,232,0.6);
+  transform: none;
+  box-shadow: none;
+}
+
+.lms-btn-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 11px 20px;
+  font-size: 14.5px;
+  font-family: Georgia, serif;
+  color: #3a5ee8;
+  background: transparent;
+  border: 1.5px solid rgba(58,94,232,0.5);
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.lms-btn-large:hover {
+  background: rgba(58,94,232,0.07);
+  border-color: rgba(58,94,232,0.8);
+  transform: none;
+  box-shadow: none;
+}
+
+
 @media (max-width: 900px) {
   .sidebar { width: 240px; }
   .content { padding: 32px 28px 60px; }
@@ -381,20 +446,27 @@ button:hover {
     font-weight: 600;
   }
 
-  .mobile-nav div {
-    padding: 11px 14px;
+  .mobile-nav button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(91,124,255,0.10);
     border-radius: 8px;
+    box-shadow: none;
+    padding: 11px 14px;
+    margin-top: 0;
     margin-bottom: 2px;
     cursor: pointer;
     font-size: 15px;
+    font-family: Georgia, serif;
     line-height: 1.4;
     color: #3a4570;
-    font-family: Georgia, serif;
-    border-bottom: 1px solid rgba(91,124,255,0.10);
     transition: background 0.15s;
   }
-  .mobile-nav div:hover { background: rgba(91,124,255,0.08); }
-  .mobile-nav div.active {
+  .mobile-nav button:hover { background: rgba(91,124,255,0.08); transform: none; }
+  .mobile-nav button.active {
     background: linear-gradient(to right, rgba(91,124,255,0.14), rgba(91,124,255,0.05));
     color: #2040cc;
     font-weight: 600;
@@ -423,56 +495,58 @@ button:hover {
 
 <!-- MOBILE HEADER (phone only) -->
 <div class="mobile-header">
-  <img src="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/Living%20Yoga%20Wisdom%20School.jpg" alt="Living Yoga Wisdom School">
-  <button class="mobile-menu-btn" onclick="toggleNav()" aria-label="Open menu">
+  <img src="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/LivingYogaWisdomSchool.jpg" alt="Living Yoga Wisdom School">
+  <button class="mobile-menu-btn" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
     <span></span><span></span><span></span>
   </button>
 </div>
 
 <!-- MOBILE DROPDOWN NAV (phone only) -->
-<div class="mobile-nav" id="mobile-nav">
+<nav class="mobile-nav" id="mobile-nav" aria-label="Course modules" aria-hidden="true">
   <div class="mobile-nav-label">Course Modules</div>
-  <div class="active" onclick="show(0)">Welcome</div>
-  <div onclick="show(1)">Module 1 — What Bhakti Is</div>
-  <div onclick="show(2)">Module 2 — How Bhakti Correlates to Other Yogic Paths</div>
-  <div onclick="show(3)">Module 3 — Devotion Reorders the Center of Life</div>
-  <div onclick="show(4)">Module 4 — A Quick Picture of "Who You Are"</div>
-  <div onclick="show(5)">Module 5 — What Bhakti Does Over Time</div>
-  <div onclick="show(6)">Module 6 — The Core Practices</div>
-  <div onclick="show(7)">Module 7 — The Hare Krishna Maha-Mantra</div>
-  <div onclick="show(8)">Module 8 — Tradition Without Sectarianism</div>
-  <div onclick="show(9)">Module 9 — The 21 Day Spiritual Fitness Challenge</div>
-  <div onclick="show(10)">Module 10 — Reconnection</div>
-  <div onclick="show(11)">Up Next</div>
-</div>
+  <a class="lms-btn" href="https://classroom.google.com/c/ODYyMTczMjgxOTM1" target="_blank" style="margin: 6px 0 10px;">← Back to Classroom</a>
+  <button class="active" onclick="show(0)" aria-current="page">Welcome</button>
+  <button onclick="show(1)">Module 1 — What Bhakti Is</button>
+  <button onclick="show(2)">Module 2 — How Bhakti Correlates to Other Yogic Paths</button>
+  <button onclick="show(3)">Module 3 — Devotion Reorders the Center of Life</button>
+  <button onclick="show(4)">Module 4 — A Quick Picture of "Who You Are"</button>
+  <button onclick="show(5)">Module 5 — What Bhakti Does Over Time</button>
+  <button onclick="show(6)">Module 6 — The Core Practices</button>
+  <button onclick="show(7)">Module 7 — The Hare Krishna Maha-Mantra</button>
+  <button onclick="show(8)">Module 8 — Tradition Without Sectarianism</button>
+  <button onclick="show(9)">Module 9 — The 21 Day Spiritual Fitness Challenge</button>
+  <button onclick="show(10)">Module 10 — Reconnection</button>
+  <button onclick="show(11)">Up Next</button>
+</nav>
 
 <div class="container">
 
 <!-- SIDEBAR -->
 <div class="sidebar">
   <div class="logo">
-    <img src="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/Living%20Yoga%20Wisdom%20School.jpg" alt="Living Yoga Wisdom School">
+    <img src="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/LivingYogaWisdomSchool.jpg" alt="Living Yoga Wisdom School">
   </div>
-  <div class="nav-label">Course Modules</div>
-  <div class="module-list">
-    <div class="active" onclick="show(0)">Welcome</div>
-    <div onclick="show(1)">Module 1 — What Bhakti Is</div>
-    <div onclick="show(2)">Module 2 — How Bhakti Correlates to Other Yogic Paths</div>
-    <div onclick="show(3)">Module 3 — Devotion Reorders the Center of Life</div>
-    <div onclick="show(4)">Module 4 — A Quick Picture of "Who You Are"</div>
-    <div onclick="show(5)">Module 5 — What Bhakti Does Over Time</div>
-    <div onclick="show(6)">Module 6 — The Core Practices</div>
-    <div onclick="show(7)">Module 7 — The Hare Krishna Maha-Mantra</div>
-    <div onclick="show(8)">Module 8 — Tradition Without Sectarianism</div>
-    <div onclick="show(9)">Module 9 — The 21 Day Spiritual Fitness Challenge</div>
-    <div onclick="show(10)">Module 10 — Reconnection</div>
-    <div onclick="show(11)">Up Next</div>
-  </div>
+  <a class="lms-btn" href="https://classroom.google.com/c/ODYyMTczMjgxOTM1" target="_blank" aria-label="Back to Google Classroom">← Back to Classroom</a>
+  <div class="nav-label" id="sidebar-nav-label">Course Modules</div>
+  <nav class="module-list" aria-labelledby="sidebar-nav-label">
+    <button class="active" onclick="show(0)" aria-current="page">Welcome</button>
+    <button onclick="show(1)">Module 1 — What Bhakti Is</button>
+    <button onclick="show(2)">Module 2 — How Bhakti Correlates to Other Yogic Paths</button>
+    <button onclick="show(3)">Module 3 — Devotion Reorders the Center of Life</button>
+    <button onclick="show(4)">Module 4 — A Quick Picture of "Who You Are"</button>
+    <button onclick="show(5)">Module 5 — What Bhakti Does Over Time</button>
+    <button onclick="show(6)">Module 6 — The Core Practices</button>
+    <button onclick="show(7)">Module 7 — The Hare Krishna Maha-Mantra</button>
+    <button onclick="show(8)">Module 8 — Tradition Without Sectarianism</button>
+    <button onclick="show(9)">Module 9 — The 21 Day Spiritual Fitness Challenge</button>
+    <button onclick="show(10)">Module 10 — Reconnection</button>
+    <button onclick="show(11)">Up Next</button>
+  </nav>
 </div>
 
 <!-- MAIN CONTENT -->
-<div class="content">
-<div class="content-inner">
+<main class="content" id="main-content">
+<div class="content-inner" aria-live="polite" aria-atomic="false">
 
 <!-- WELCOME -->
 <div class="section active">
@@ -487,7 +561,7 @@ button:hover {
 <li>What does it mean to reorganize life around service rather than self-centered aims?</li>
 <li>How do practices like chanting, studying sacred texts, and serving others gradually help us remember our relationship with the Divine?</li>
 </ul>
-<img class="hero" src="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/whatisbhakti1.png" alt="">
+<img class="hero" src="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/whatisbhakti1.png" alt="What Is Bhakti — course banner">
 <button onclick="show(1)">Begin Course</button>
 </div>
 
@@ -733,32 +807,72 @@ button:hover {
 <strong>Before Moving On</strong>
 <p>Please reflect on one or two key insights from the course—something that challenged or clarified your understanding—and briefly explain why it stood out. Post your response in Google Classroom, then read a few peers' reflections and respond thoughtfully to at least one.</p>
 </div>
+<a class="lms-btn-large" href="https://classroom.google.com/c/ODYyMTczMjgxOTM1" target="_blank">← Return to Classroom</a>
 </div>
 
 </div>
-</div>
+</main>
 </div>
 
 <script>
 function show(i) {
+  // Toggle sections
   document.querySelectorAll('.section').forEach((s,idx) => s.classList.toggle('active', idx===i));
-  document.querySelectorAll('.module-list div').forEach((n,idx) => n.classList.toggle('active', idx===i));
-  document.querySelectorAll('.mobile-nav div:not(.mobile-nav-label)').forEach((n,idx) => n.classList.toggle('active', idx===i));
+
+  // Update sidebar nav buttons
+  document.querySelectorAll('.module-list button').forEach((n,idx) => {
+    n.classList.toggle('active', idx===i);
+    n.setAttribute('aria-current', idx===i ? 'page' : 'false');
+  });
+
+  // Update mobile nav buttons
+  document.querySelectorAll('#mobile-nav button').forEach((n,idx) => {
+    n.classList.toggle('active', idx===i);
+    n.setAttribute('aria-current', idx===i ? 'page' : 'false');
+  });
+
+  // Reveal topo map on final screen
+  document.getElementById('topo-bg').classList.toggle('revealed', i === 11);
+
   window.scrollTo({top:0, behavior:'smooth'});
-  // Close mobile nav after selection
-  document.getElementById('mobile-nav').classList.remove('open');
+
+  // Close mobile nav
+  const mobileNav = document.getElementById('mobile-nav');
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.querySelector('.mobile-menu-btn').setAttribute('aria-label', 'Open menu');
+  document.querySelector('.mobile-menu-btn').setAttribute('aria-expanded', 'false');
+
+  // Move focus to the newly active section heading
+  const activeSection = document.querySelectorAll('.section')[i];
+  const heading = activeSection.querySelector('h1, h2');
+  if (heading) {
+    heading.setAttribute('tabindex', '-1');
+    heading.focus();
+  }
 }
+
 function toggleNav() {
-  document.getElementById('mobile-nav').classList.toggle('open');
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  const isOpen = nav.classList.toggle('open');
+  nav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 }
+
 // Close mobile nav when tapping outside
 document.addEventListener('click', function(e) {
   const nav = document.getElementById('mobile-nav');
   const btn = document.querySelector('.mobile-menu-btn');
   if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
     nav.classList.remove('open');
+    nav.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open menu');
   }
 });
+
 function checkQ2() {
   const sel = document.querySelector('input[name="q2"]:checked');
   const result = document.getElementById('q2-result');
