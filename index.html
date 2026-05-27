@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/images/favicon.jpg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CP6NQR8V2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CP6NQR8V2M');
+</script>
+<title>What Is Bhakti?</title>
+<style>
+
+/* ===================== RESET & BASE ===================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 19px;
+  line-height: 1.7;
+  color: #1e2240;
+  background: #e8ecf5;
+  min-height: 100vh;
+}
+
+/* ===================== TOPO BACKGROUND ===================== */
+#topo-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/images/topomap.jpg");
+  background-size: cover;
+  background-position: center top;
+}
+
+#topo-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 20%,
+    rgba(232, 236, 245, 0.55) 60%,
+    rgba(232, 236, 245, 0.92) 100%
+  );
+  transition: opacity 1.2s ease;
+}
+
+#topo-bg.revealed::after {
+  opacity: 0;
+}
+
+/* ===================== LAYOUT ===================== */
+.container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================== SIDEBAR ===================== */
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(8px);
+  border-right: 1px solid rgba(91,124,255,0.18);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 20px rgba(61,80,150,0.08);
+}
+
+.logo {
+  padding: 24px 20px 18px;
+  border-bottom: 1px solid rgba(91,124,255,0.12);
+  text-align: center;
+}
+
+.logo img {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===================== NAV ===================== */
+.nav-label {
+  padding: 14px 20px 6px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8892b8;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+}
+
+.module-list {
+  flex: 1;
+  padding: 6px 12px 20px;
+}
+
+.module-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(91,124,255,0.12);
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 10px 14px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  line-height: 1.4;
+  color: #3a4570;
+  transition: background 0.15s, color 0.15s, padding-left 0.15s;
+  position: relative;
+}
+
+.module-list button:hover {
+  background: rgba(91,124,255,0.08);
+  color: #2a3260;
+  padding-left: 18px;
+  transform: none;
+  box-shadow: none;
+}
+
+.module-list button.active {
+  background: linear-gradient(to right, rgba(91,124,255,0.14), rgba(91,124,255,0.05));
+  color: #2040cc;
+  font-weight: 600;
+  padding-left: 18px;
+}
+
+.module-list button.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 3px;
+  background: #5b7cff;
+  border-radius: 0 3px 3px 0;
+}
+
+/* ===================== MAIN CONTENT ===================== */
+.content {
+  flex: 1;
+  padding: 48px 48px 80px;
+  min-height: 100vh;
+}
+
+.content-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.97);
+  padding: 56px 60px;
+  border-radius: 16px;
+  box-shadow:
+    0 2px 6px rgba(61,80,150,0.08),
+    0 12px 40px rgba(61,80,150,0.16),
+    0 40px 80px rgba(61,80,150,0.14),
+    0 80px 120px rgba(61,80,150,0.08);
+}
+
+/* ===================== SECTIONS ===================== */
+.section { display: none; }
+.section.active { display: block; }
+
+/* ===================== TYPOGRAPHY ===================== */
+h1 {
+  font-size: 2em;
+  color: #1a2060;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.55em;
+  color: #1a2060;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.1em;
+  color: #2a3580;
+  margin: 36px 0 16px;
+  font-weight: bold;
+}
+
+h2 + p, h2 + ul, h1 + p { margin-top: 18px; }
+
+p { margin: 0 0 18px; color: #2c3256; }
+
+em { color: #5b6490; }
+
+ul {
+  padding-left: 22px;
+  margin: 0 0 18px;
+}
+
+ul li {
+  margin-bottom: 12px;
+  line-height: 1.65;
+  color: #2c3256;
+}
+
+img.hero {
+  width: 100%;
+  border-radius: 10px;
+  margin: 42px 0 22px;
+  display: block;
+}
+
+/* ===================== DIVIDER ===================== */
+.module-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(91,124,255,0.2), transparent);
+  margin: 28px 0;
+}
+
+/* ===================== BOXES ===================== */
+.reflection-box,
+.knowledge-box,
+.takeaways-box,
+.upnext-box,
+.discussion-box {
+  padding: 20px 24px;
+  margin: 24px 0;
+  border-radius: 10px;
+  font-size: 19px;
+}
+
+.reflection-box {
+  background: #eef2ff;
+  border-left: 4px solid #5b7cff;
+}
+
+.knowledge-box {
+  background: #fdf8e8;
+  border-left: 4px solid #e8b830;
+}
+
+.takeaways-box {
+  background: #fff8f0;
+  border-left: 4px solid #d4813a;
+}
+
+.upnext-box {
+  background: #edfaf3;
+  border-left: 4px solid #2eb870;
+}
+
+.discussion-box {
+  background: #f5eeff;
+  border-left: 4px solid #9060e8;
+}
+
+.reflection-box strong,
+.knowledge-box strong,
+.takeaways-box strong,
+.upnext-box strong,
+.discussion-box strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+}
+
+.reflection-box strong { color: #4060cc; }
+.knowledge-box strong  { color: #9a7010; }
+.takeaways-box strong  { color: #a05c20; }
+.upnext-box strong     { color: #1a8a50; }
+.discussion-box strong { color: #6030b0; }
+
+/* ===================== QUOTE BOX ===================== */
+.quote-box {
+  background: #fff8f0;
+  border-left: 4px solid #d4813a;
+  padding: 20px 24px;
+  margin: 24px 0;
+  border-radius: 10px;
+  font-size: 19px;
+}
+.quote-box strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  color: #a05c20;
+}
+
+/* ===================== BUTTON ===================== */
+button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 11px 20px;
+  font-size: 14.5px;
+  font-family: Georgia, serif;
+  color: white;
+  background: #3a5ee8;
+  border: 1.5px solid #1a3ab8;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.15) inset,
+    0 4px 14px rgba(58,94,232,0.30);
+  transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+}
+
+button:hover {
+  background: #2d4ed4;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(58,94,232,0.35);
+}
+
+/* ===================== LMS BUTTON ===================== */
+.lms-btn {
+  display: block;
+  width: calc(100% - 24px);
+  margin: 0 12px 4px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  color: #3a5ee8;
+  background: transparent;
+  border: 1.5px solid rgba(58,94,232,0.35);
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.15s, border-color 0.15s;
+  margin-top: 0;
+}
+.lms-btn:hover {
+  background: rgba(58,94,232,0.07);
+  border-color: rgba(58,94,232,0.6);
+  transform: none;
+  box-shadow: none;
+}
+
+.lms-btn-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 11px 20px;
+  font-size: 14.5px;
+  font-family: Georgia, serif;
+  color: #3a5ee8;
+  background: transparent;
+  border: 1.5px solid rgba(58,94,232,0.5);
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.lms-btn-large:hover {
+  background: rgba(58,94,232,0.07);
+  border-color: rgba(58,94,232,0.8);
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===================== MATCHING ACTIVITY ===================== */
+.matching-activity { margin: 24px 0; }
+
+.matching-instructions {
+  font-size: 19px;
+  color: #2c3256;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.matching-workspace {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.matching-descriptions {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.matching-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.matching-description {
+  flex: 1;
+  padding: 10px 14px;
+  background: #f4f6ff;
+  border: 1.5px solid rgba(91,124,255,0.2);
+  border-radius: 8px;
+  font-size: 19px;
+  color: #2c3256;
+  line-height: 1.7;
+}
+
+.matching-drop-zone {
+  width: 160px;
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.8);
+  border: 2px dashed rgba(91,124,255,0.3);
+  border-radius: 8px;
+  font-size: 19px;
+  font-family: Georgia, serif;
+  color: #8892b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+}
+
+.matching-drop-zone.drag-over {
+  border-color: #5b7cff;
+  background: #eef2ff;
+}
+
+.matching-drop-zone.filled {
+  border-style: solid;
+  border-color: rgba(91,124,255,0.35);
+  color: #2040cc;
+  font-weight: 600;
+  background: #eef2ff;
+}
+
+.matching-drop-zone.correct {
+  border-color: #2eb870;
+  background: #edfaf3;
+  color: #1a7a40;
+}
+
+.matching-drop-zone.incorrect {
+  border-color: #e05050;
+  background: #fff0f0;
+  color: #b03030;
+}
+
+.matching-drop-zone .remove-match {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 18px;
+  height: 18px;
+  background: #e05050;
+  color: white;
+  border-radius: 50%;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  transition: background 0.15s;
+}
+.matching-drop-zone .remove-match:hover {
+  background: #c03030;
+  transform: none;
+  box-shadow: none;
+}
+
+.matching-bank {
+  width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: sticky;
+  top: 20px;
+}
+
+.matching-bank-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8892b8;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.match-chip {
+  padding: 9px 12px;
+  background: #fff8f0;
+  border: 1.5px solid #d4813a;
+  border-radius: 8px;
+  font-size: 19px;
+  font-family: Georgia, serif;
+  color: #a05c20;
+  font-weight: 600;
+  cursor: grab;
+  text-align: center;
+  transition: background 0.15s, transform 0.12s, box-shadow 0.12s;
+  user-select: none;
+}
+.match-chip:hover {
+  background: #fff0e0;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(212,129,58,0.2);
+}
+.match-chip:active { cursor: grabbing; }
+
+.matching-feedback {
+  margin-top: 20px;
+  padding: 18px 22px;
+  border-radius: 10px;
+  font-size: 19px;
+  line-height: 1.7;
+  display: none;
+}
+.matching-feedback.general {
+  background: #fdf8e8;
+  border-left: 4px solid #e8b830;
+  color: #2c3256;
+}
+.matching-feedback.detailed {
+  background: #fdf8e8;
+  border-left: 4px solid #e8b830;
+  color: #2c3256;
+}
+.matching-feedback strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  color: #9a7010;
+}
+.matching-feedback.detailed strong { color: #9a7010; }
+
+.feedback-item {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(91,124,255,0.12);
+}
+.feedback-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.feedback-item-desc { font-weight: bold; color: #1a2060; margin-bottom: 4px; font-size: 19px; }
+.feedback-item-answer { font-size: 19px; color: #2c3256; font-family: Georgia, serif; margin-bottom: 6px; }
+
+.btn-secondary {
+  background: transparent;
+  color: #3a5ee8;
+  border: 1.5px solid rgba(58,94,232,0.5);
+  box-shadow: none;
+}
+.btn-secondary:hover {
+  background: rgba(58,94,232,0.07);
+  border-color: rgba(58,94,232,0.8);
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-reset {
+  background: transparent;
+  color: #888;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  box-shadow: none;
+  font-size: 13.5px;
+  padding: 9px 16px;
+}
+.btn-reset:hover {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.25);
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===================== MOBILE NAV HEADER ===================== */
+.mobile-header { display: none; }
+.mobile-nav { display: none; }
+
+@media (max-width: 900px) {
+  .sidebar { width: 240px; }
+  .content { padding: 32px 28px 60px; }
+  .content-inner { padding: 40px 36px; }
+}
+
+@media (max-width: 700px) {
+  .matching-workspace { flex-direction: column; }
+  .matching-bank { width: 100%; flex-direction: row; flex-wrap: wrap; position: static; }
+  .match-chip { flex: 1; min-width: 120px; }
+  .matching-drop-zone { width: 130px; }
+}
+
+@media (max-width: 600px) {
+  .sidebar { display: none; }
+  .container { flex-direction: column; }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid rgba(91,124,255,0.18);
+    padding: 12px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(61,80,150,0.10);
+  }
+
+  .mobile-header img { height: 36px; width: auto; }
+
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: 0;
+  }
+  .mobile-menu-btn:hover { background: rgba(91,124,255,0.08); transform: none; box-shadow: none; }
+  .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: #3a4570; border-radius: 2px; }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 61px;
+    left: 0; right: 0;
+    background: rgba(255,255,255,0.98);
+    border-bottom: 1px solid rgba(91,124,255,0.18);
+    box-shadow: 0 8px 24px rgba(61,80,150,0.14);
+    z-index: 99;
+    max-height: calc(100vh - 61px);
+    overflow-y: auto;
+    padding: 8px 12px 16px;
+  }
+  .mobile-nav.open { display: block; }
+
+  .mobile-nav-label {
+    padding: 12px 14px 4px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8892b8;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+  }
+
+  .mobile-nav button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(91,124,255,0.10);
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 11px 14px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: Georgia, serif;
+    line-height: 1.4;
+    color: #3a4570;
+    transition: background 0.15s;
+  }
+  .mobile-nav button:hover { background: rgba(91,124,255,0.08); transform: none; box-shadow: none; }
+  .mobile-nav button.active {
+    background: linear-gradient(to right, rgba(91,124,255,0.14), rgba(91,124,255,0.05));
+    color: #2040cc;
+    font-weight: 600;
+    border-left: 3px solid #5b7cff;
+    padding-left: 11px;
+  }
+
+  .content { padding: 20px 14px 60px; }
+  .content-inner { padding: 28px 22px; border-radius: 12px; }
+  h1 { font-size: 1.55em; }
+  h2 { font-size: 1.3em; }
+
+  .reflection-box, .knowledge-box, .takeaways-box,
+  .upnext-box, .discussion-box, .quote-box { padding: 16px 18px; }
+
+  button { width: 100%; justify-content: center; font-size: 15px; padding: 13px 20px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOPO BACKGROUND -->
+<div id="topo-bg"></div>
+
+<!-- MOBILE HEADER (phone only) -->
+<div class="mobile-header">
+  <img src="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/images/logo.png" alt="Living Yoga Wisdom School">
+  <button class="mobile-menu-btn" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<!-- MOBILE DROPDOWN NAV (phone only) -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Course modules" aria-hidden="true">
+  <div class="mobile-nav-label">Course Modules</div>
+  <a class="lms-btn" href="[LMS URL]" target="_blank" style="margin: 6px 0 10px;">← Back to Classroom</a>
+  <button class="active" onclick="show(0)" aria-current="page">Welcome</button>
+  <button onclick="show(1)">Module 1 — What Bhakti Is</button>
+  <button onclick="show(2)">Module 2 — Bhakti and Other Yogic Paths</button>
+  <button onclick="show(3)">Module 3 — Devotion Reorders the Center of Life</button>
+  <button onclick="show(4)">Module 4 — A Quick Picture of "Who You Are"</button>
+  <button onclick="show(5)">Module 5 — What Bhakti Does Over Time</button>
+  <button onclick="show(6)">Module 6 — The Core Practices</button>
+  <button onclick="show(7)">Module 7 — The Hare Krishna Maha-Mantra</button>
+  <button onclick="show(8)">Module 8 — Tradition Without Sectarianism</button>
+  <button onclick="show(9)">Module 9 — The 21 Day Spiritual Fitness Challenge</button>
+  <button onclick="show(10)">Module 10 — Reconnection</button>
+  <button onclick="show(11)">Discussion</button>
+  <button onclick="show(12)">Up Next</button>
+</nav>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/images/logo.png" alt="Living Yoga Wisdom School">
+  </div>
+  <a class="lms-btn" href="[LMS URL]" target="_blank" aria-label="Back to Google Classroom">← Back to Classroom</a>
+  <div class="nav-label" id="sidebar-nav-label">Course Modules</div>
+  <nav class="module-list" aria-labelledby="sidebar-nav-label">
+    <button class="active" onclick="show(0)" aria-current="page">Welcome</button>
+    <button onclick="show(1)">Module 1 — What Bhakti Is</button>
+    <button onclick="show(2)">Module 2 — Bhakti and Other Yogic Paths</button>
+    <button onclick="show(3)">Module 3 — Devotion Reorders the Center of Life</button>
+    <button onclick="show(4)">Module 4 — A Quick Picture of "Who You Are"</button>
+    <button onclick="show(5)">Module 5 — What Bhakti Does Over Time</button>
+    <button onclick="show(6)">Module 6 — The Core Practices</button>
+    <button onclick="show(7)">Module 7 — The Hare Krishna Maha-Mantra</button>
+    <button onclick="show(8)">Module 8 — Tradition Without Sectarianism</button>
+    <button onclick="show(9)">Module 9 — The 21 Day Spiritual Fitness Challenge</button>
+    <button onclick="show(10)">Module 10 — Reconnection</button>
+    <button onclick="show(11)">Discussion</button>
+    <button onclick="show(12)">Up Next</button>
+  </nav>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="content" id="main-content">
+<div class="content-inner" aria-live="polite" aria-atomic="false">
+
+<!-- WELCOME -->
+<div class="section active">
+<h1>What Is Bhakti?</h1>
+<p><em>Introduction to the yoga of love and devotion</em></p>
+<div class="module-divider"></div>
+<h3>Essential Questions</h3>
+<ul>
+<li>What is bhakti, and how is it different from belief, emotion, or general spirituality?</li>
+<li>How does bhakti integrate action, knowledge, and meditation within a single path?</li>
+<li>Who am I according to bhakti philosophy, and how is the self distinct from body and mind?</li>
+<li>What does it mean to reorganize life around service rather than self-centered aims?</li>
+<li>How do practices like chanting, studying sacred texts, and serving others gradually help us remember our relationship with the Divine?</li>
+</ul>
+<img class="hero" src="https://raw.githubusercontent.com/Nimai-Delaware/Living-Yoga-Wisdom-School/refs/heads/main/images/whatisbhakti.jpg" alt="What Is Bhakti? — course banner">
+<button onclick="show(1)">Begin Course</button>
+</div>
+
+<!-- ============================================================
+     CONTENT BELOW IS PRESENTATION LAYER ONLY.
+     All text comes verbatim from the source document.
+     Do not edit, shorten, paraphrase, or rewrite any content.
+     Only modify: box types, section structure, nav labels.
+
+     BOX COLOR SYSTEM:
+     .reflection-box  — Blue   — Reflection / Application
+     .knowledge-box   — Yellow — Knowledge Check (radio quiz)
+     .takeaways-box   — Amber  — Key Takeaways
+     .quote-box       — Amber  — Quotes, info callouts, level cards
+     .upnext-box      — Green  — Up Next (course preview)
+     .discussion-box  — Purple — Discussion Prompt
+
+     INTERACTIVE COMPONENTS:
+     Radio quiz       — .knowledge-box + checkQ() function
+     Matching activity — .matching-activity + initMatching() function
+                         (see Module 3 below for full demo)
+     ============================================================ -->
+
+<!-- MODULE 1 -->
+<div class="section">
+<h2>Module 1 — What Bhakti Is</h2>
+
+<p>Bhakti is one of the classical paths within the broader yoga tradition. The term <em>yoga</em> literally means "to link" or "to connect." It refers to a structured process by which the individual self becomes consciously connected with ultimate reality.</p>
+
+<p>Within the traditional yoga framework, different paths emphasize different primary disciplines. Some stress disciplined action and ethical responsibility. Others emphasize philosophical analysis and austerity. Still others focus on meditation and mastery of attention. The Sanskrit word <em>bhakti</em> is commonly translated as devotion, but in this context it means more than sentiment. It refers to a deliberate reorientation of the self toward the Divine and the sustained expression of that orientation through service, remembrance, and intentional practice.</p>
+
+<p>The aim of bhakti is not limited to moral refinement or psychological calm, though those may arise along the way. It proposes that the self is relational by nature and that its deepest fulfillment comes from reconnecting with the Divine in a way that is recovered rather than newly created.</p>
+
+<p>Bhakti does not require withdrawal from ordinary responsibilities—you do not need to abandon your life or relocate to a cave. Practitioners generally continue their work, family life, and social obligations. What changes is whether personal gratification, achievement, and social approval remain primary, or whether a higher purpose becomes the governing priority. Over time, that shift in commitment influences how time is used, which habits are sustained, and which pursuits gradually lose importance, while ordinary responsibilities themselves remain.</p>
+
+<p>This course introduces the foundational concepts and practices of the bhakti tradition. It offers a broad orientation to the path — exploring what devotion means, how it is cultivated in daily life, and why it has long been presented as a complete and coherent system of yoga. It offers a framework that explains the nature of the self, the nature of reality, the causes of suffering, and the practices through which realization unfolds. Later courses examine these ideas in greater depth while also expanding into additional topics.</p>
+
+<button onclick="show(2)">Continue → Module 2</button>
+</div>
+
+<!-- MODULE 2 -->
+<div class="section">
+<h2>Module 2 — How Bhakti Correlates to Other Yogic Paths</h2>
+
+<p>Earlier we noted that the yoga tradition includes different paths, each emphasizing a distinct primary discipline. We can now look at those more closely.</p>
+
+<p><em>Karma yoga</em> centers on disciplined action. It teaches that work and responsibility can become a means of spiritual growth when performed without attachment to personal reward.</p>
+
+<p><em>Jñāna yoga</em> centers on philosophical inquiry. It emphasizes careful analysis of reality, discrimination between the temporary and the enduring, and insight into the nature of the self.</p>
+
+<p><em>Dhyāna yoga</em> centers on meditation. It trains attention, steadies the mind, and seeks sustained inward absorption beyond distraction and fluctuation. Later yoga traditions often refer to this meditative path as <em>rāja yoga</em>, and the <em>aṣṭāṅga</em> (eight-limbed) system presents a structured method for cultivating that discipline.</p>
+
+<p>These paths are not presented as rivals. They represent different emphases within a shared aim. Bhakti does not reject these disciplines; it reorients them so that action, knowledge, and meditation culminate in conscious relationship with the Divine:</p>
+
+<ul>
+<li>In karma yoga, action is not only detached from personal reward; it becomes consciously offered. For example, a teacher may begin by practicing <em>karma yoga</em>, doing their work responsibly without being attached to praise, promotion, or recognition. Over time the orientation shifts. Before beginning the day, they consciously dedicate their work as service to the Divine. The same lesson planning, teaching, and helping students continues, but the intention is no longer primarily personal success. In other words the work itself is treated as an offering.</li>
+<li>In jñāna yoga, knowledge is not only analytical understanding; it culminates in recognition of a conscious source. For example, a philosopher may reason through study and reflection that consciousness cannot be reduced to matter. At first this realization remains primarily analytical. But as it deepens, the seeker recognizes that the ultimate source of consciousness must itself be conscious. At that point the orientation of the practice changes. The person may continue studying <em>śāstra</em> and engaging in philosophical inquiry, but now that study is done in a spirit of service and devotion to that conscious source.</li>
+<li>In dhyāna yoga, meditation practice is not limited to inward absorption; it becomes sustained awareness of that divine, conscious source. For example, someone might begin meditation by focusing on the breath in order to steady the mind. As the practice develops, the meditation shifts from simply quieting thought to directing attention toward the Divine through mantra or remembrance.</li>
+</ul>
+
+<p>For this reason, bhakti texts describe devotion as the integration of the other disciplines within a relational framework. Ethical discipline, philosophical inquiry, and meditation are not set aside — they become natural expressions of the relationship bhakti seeks to uncover.</p>
+
+<p>Understanding this helps prevent two distortions. One is reducing bhakti to sentiment. The other is treating it as merely one technique among many. Within its own presentation, bhakti functions as a comprehensive orientation in which action, knowledge, and meditation operate together rather than in isolation.</p>
+
+<div class="knowledge-box">
+<strong>Knowledge Check</strong>
+<p>Which of the following best describes how bhakti relates to action, knowledge, and meditation?</p>
+<div style="margin-top:12px;">
+<label style="display:block;margin:10px 0;cursor:pointer;"><input type="radio" name="q1" value="A" style="margin-right:10px;">A. Bhakti replaces action, knowledge, and meditation with devotion</label>
+<label style="display:block;margin:10px 0;cursor:pointer;"><input type="radio" name="q1" value="B" style="margin-right:10px;">B. Bhakti treats action, knowledge, and meditation as separate, prerequisite paths</label>
+<label style="display:block;margin:10px 0;cursor:pointer;"><input type="radio" name="q1" value="C" style="margin-right:10px;">C. Bhakti integrates action, knowledge, and meditation by orienting all of them toward service and relationship with the Divine</label>
+<label style="display:block;margin:10px 0;cursor:pointer;"><input type="radio" name="q1" value="D" style="margin-right:10px;">D. Bhakti is primarily a philosophical system, separate from practical action</label>
+<button type="button" onclick="checkQ1()">Check Answer</button>
+<p id="q1-result" style="margin-top:12px;font-weight:bold;display:none;"></p>
+</div>
+</div>
+
+<button onclick="show(3)">Continue → Module 3</button>
+</div>
+
+<!-- MODULE 3 -->
+<div class="section">
+<h2>Module 3 — Devotion Reorders the Center of Life</h2>
+
+<p>If bhakti is understood as an ongoing relationship with the Divine, its implications extend beyond belief or private practice. Over time, it reshapes how meaning is assigned to experience.</p>
+
+<p>This shift is not proposed as an arbitrary moral demand. It arises from a view of human fulfillment. If the self is relational by nature, and if lasting satisfaction does not come from temporary achievements alone, then it is reasonable to examine whether our current organizing priorities are adequate. Bhakti suggests that dissatisfaction is not always a failure of effort, but sometimes a signal that something central is misaligned.</p>
+
+<p>Modern life is often organized around immediate concerns—comfort, recognition, productivity, pleasure, security. These are not inherently problematic. They are natural human pursuits and play a legitimate role in a healthy life. Yet when treated as ultimate, they tend to disappoint. Even when attained, they do not provide the enduring fulfillment many people expect from them.</p>
+
+<p>Bhakti introduces a different reference point. The question gradually shifts from "How does this serve my advancement?" to "How does this align with the purpose I am trying to center my life around?" That shift does not eliminate work, family life, or ambition–it changes how decisions are made and what counts as success. Practices such as chanting, study, and service exist to reinforce this re-centering. Without sustained effort, attention naturally returns to familiar priorities.</p>
+
+<div class="reflection-box">
+<strong>Practical Application</strong>
+<p>Choose one ordinary action today and consciously dedicate it to the Divine. Observe whether this shift in intention alters your experience of the action.</p>
+</div>
+
+<button onclick="show(4)">Continue → Module 4</button>
+</div>
+
+<!-- MODULE 4 -->
+<div class="section">
+<h2>Module 4 — A Quick Picture of "Who You Are"</h2>
+
+<p>The foundational point of yoga philosophy is that you are not identical with the body. The body is the vehicle through which the self currently functions — it is not the self itself. The self is an individual unit of consciousness.</p>
+
+<p>The body changes continuously. The mind changes even more rapidly—thoughts, moods, preferences, and roles shift over time. Yet there remains a continuous experiencer, the one to whom these changes appear. That enduring subject is referred to in the bhakti tradition as the soul (<em>atma</em>): the conscious, individual self.</p>
+
+<p>The soul is described as eternal and unchanging. It does not develop, deteriorate, or transform in response to material conditions. What changes are the bodily and mental coverings through which the self currently operates. The self itself remains constant, and its existence is not terminated by the death of the physical body. According to the yoga wisdom literatures, the self continues beyond bodily death. This continued existence may involve further material embodiment—commonly called reincarnation—unless and until the self becomes free from material identification.</p>
+
+<p>Bhakti also distinguishes between the self and what it calls false ego (<em>ahankara</em>). False ego does not necessarily mean arrogance. It refers to the constructed identity that arises from identifying the self with temporary designations such as profession, nationality, temperament, or bodily attributes. These roles organize experience, but they are not the self.</p>
+
+<p>In contrast, <em>real ego</em> refers to the actual, enduring individual—the eternal self whose identity persists beyond bodily circumstance. Spiritual growth does not eliminate individuality; it removes misidentification.</p>
+
+<p>The claims introduced here are not speculative additions to yoga, nor are they the opinion of a single teacher. They are drawn from a substantial body of classical literature and have been examined through centuries of philosophical commentary and debate. The tradition also presents logical arguments in support of these distinctions, alongside literary sources. At the same time, these conclusions are not meant to remain theoretical: they are understood to be testable through sustained practice. A later course explores the philosophical arguments in detail. For present purposes, it is enough to understand the basic framework on which bhakti rests.</p>
+
+<p>The aim is not to prove a position. It is to give language to a lived intuition many thoughtful people already feel: "There's more to me than my appetites. There's more to life than what my nervous system demands." Bhakti speaks to that "more."</p>
+
+<button onclick="show(5)">Continue → Module 5</button>
+</div>
+
+<!-- MODULE 5 -->
+<div class="section">
+<h2>Module 5 — What Bhakti Does Over Time</h2>
+
+<p>When bhakti becomes consistent, it does not remain confined to private belief or isolated moments of practice. It begins to influence both inner life and outward conduct. Because it reorients what is treated as central, it gradually affects how one relates to everything else.</p>
+
+<p>Over time, practitioners often observe:</p>
+
+<ul>
+<li>A clearer sense of purpose grounded in service rather than self-advancement</li>
+<li>A more stable experience of meaning that does not collapse when circumstances change</li>
+<li>A deeper form of contentment not entirely dependent on acquisition or other material considerations</li>
+<li>Greater steadiness of attention and reduced internal fragmentation</li>
+<li>Strengthening of traits such as humility, restraint, gratitude, and compassion</li>
+<li>A reduced need to measure oneself against others</li>
+<li>More consistency between stated values and lived behavior</li>
+<li>A shift in how success, failure, praise, and criticism are interpreted</li>
+</ul>
+
+<p>These developments are not cosmetic. They affect how a person speaks, works, handles conflict, uses time, and relates to others. Bhakti does not remove personality or erase individuality. It reorganizes them within a different paradigm, and that shift gradually becomes visible in daily life.</p>
+
+<div class="reflection-box">
+<strong>Practical Application</strong>
+<p>Over the next few days, notice one recurring reaction—irritation, comparison, defensiveness, or pride. Simply observe it without judgment and reflect on what it reveals about your current priorities.</p>
+</div>
+
+<button onclick="show(6)">Continue → Module 6</button>
+</div>
+
+<!-- MODULE 6 -->
+<div class="section">
+<h2>Module 6 — The Core Practices</h2>
+
+<p>Because bhakti centers relationship, it is supported by practices that nurture and stabilize that connection. These practices are not arbitrary — each addresses a different dimension of human life: speech, attention, community, action, and environment.</p>
+
+<p>In everyday life, bhakti takes shape through:</p>
+
+<ul>
+<li><strong>Mantra meditation (<em>japa</em>)</strong> — the personal, repeated chanting of a sacred mantra, often on beads. This practice trains attention and anchors the mind in remembrance. It is typically performed individually and consistently. The next module explains mantra meditation in more depth.</li>
+<li><strong>Kīrtan</strong> — congregational chanting with musical accompaniment, traditionally in a call-and-response format. Kīrtan engages voice, hearing, and collective focus. It reinforces devotion in a communal setting.</li>
+<li><strong>Hearing</strong> — study of sacred texts (<em>sastra</em>) and exposure to established teachers within the tradition. Hearing provides conceptual clarity and prevents practice from becoming purely emotional or mechanical.</li>
+<li><strong>Service (<em>seva</em>)</strong> — deliberate acts offered for a purpose beyond self-interest. Service may be formal or informal, public or private, but it is intended to align action with devotion.</li>
+<li><strong>Worship and offerings</strong> — structured ways of bringing devotion into daily rhythms, such as offering food before eating or setting aside space for prayer. These practices extend orientation beyond isolated sessions into ordinary life.</li>
+</ul>
+
+<p>These practices are meant to work together. Meditation steadies attention, which makes study more thoughtful. Study clarifies intention, which in turn strengthens meditation. Service brings what is learned into action, and practicing with others helps sustain focus and perspective. Simple daily offerings keep devotion from being limited to isolated sessions. Over time, the practices begin to reinforce one another and take on a natural rhythm.</p>
+
+<p>At the same time they don't need to be adopted all at once. Most people begin with one or two steady commitments and allow their practice to grow gradually. What matters at the beginning is not doing everything, but doing something consistently.</p>
+
+<div class="reflection-box">
+<strong>Practical Reflection</strong>
+<p>Reflect back on your life. Where have you sought connection? How has that changed over time? Notice how you invest your free time. What helps you feel connected and seen? What tends to isolate you? If the self is relational by nature, what might it mean to include the Divine in that pattern?</p>
+</div>
+
+<button onclick="show(7)">Continue → Module 7</button>
+</div>
+
+<!-- MODULE 7 -->
+<div class="section">
+<h2>Module 7 — The Hare Krishna Maha-Mantra</h2>
+
+<p>Among the practices described so far, mantra meditation holds a central place. In this lineage, the mantra traditionally emphasized is:</p>
+
+<div class="quote-box">
+<strong>Maha-Mantra</strong>
+<p><em>Hare Krishna, Hare Krishna, Krishna Krishna, Hare Hare<br>Hare Rama, Hare Rama, Rama Rama, Hare Hare</em></p>
+</div>
+
+<p>These are names for our divine, conscious source in the Sanskrit language. They don't conflict with other names from other traditions. The yoga wisdom literatures explain that just as people in different parts of the world point at the same sun and call it by different names, cultures across time have used different names to address the same ultimate reality. Traditions differ in their details, but this Hare Krishna mantra is understood to be calling out to the Cause of all Causes.</p>
+
+<p>Krishna means "all-attractive," reminding us that we're calling out not to "a god," but to God — the personal source of everything we're attracted to. Hare invokes the divine feminine, pure love personified. Rama means "the source of all pleasure," pointing toward the deep joy of restored spiritual relationship rather than fleeting stimulation, as well as the strength and support that sustain that relationship.</p>
+
+<p>Taken together, this mantra is like calling out, "My friend, please help me remember our connection. Please help me move beyond selfishness. Please engage me in loving service."</p>
+
+<p>What makes this practice distinctive is its directness. The mantra is not presented as symbolic or merely contemplative. It is understood to be a personal address through sacred sound. In chanting, one is not simply thinking about the Divine, but calling out. And because the Divine is understood to be conscious and responsive, that calling is meant to awaken lived awareness of an existing relationship. Over time, the repetition of these names is said to soften distraction, steady attention, and make that connection more perceptible.</p>
+
+<p>Another feature of this practice is its portability. The mantra can be memorized easily and carried with you wherever you go. It does not depend on a particular location or setup. You can chant it quietly while walking, driving, waiting in line, or sitting at home. No one has to authorize it. You can begin wherever you are.</p>
+
+<p>Because this practice is based on direct engagement, it does not require prior philosophical mastery. One need not resolve every theological question before beginning. The tradition invites experiment: chant with attention and observe the effects over time. If you are not ready to chant this mantra specifically, you may chant any sincere name of God you relate to. What matters is steady, attentive repetition. Module 9 will offer a structured way to explore mantra meditation more intentionally.</p>
+
+<button onclick="show(8)">Continue → Module 8</button>
+</div>
+
+<!-- MODULE 8 -->
+<div class="section">
+<h2>Module 8 — Tradition Without Sectarianism</h2>
+
+<p>The yoga wisdom literatures present a coherent philosophy and a defined set of practices that have been studied and practiced for millennia. For that reason, the tradition places importance on guidance and transmission. Sacred texts articulate the philosophical framework and empowered teachers clarify how it is applied according to time, place, and circumstance. The larger community of practitioners demonstrate what steady engagement looks like over time. This structure is not meant to replace personal experience, but to support it.</p>
+
+<p>People do this naturally in other areas of life:</p>
+
+<ul>
+<li>They learn a language within a community of speakers.</li>
+<li>They learn a craft through apprenticeship and practice.</li>
+<li>They study medicine through established institutions and mentorship.</li>
+<li>They study law through precedent and trained instruction.</li>
+</ul>
+
+<p>In each case, the goal is not blind allegiance. It is understanding something as it has been carefully developed and transmitted over time. Bhakti is approached in the same way. Its texts articulate the philosophy in detail, teachers clarify how it is applied, and communities sustain the practices so they are not reduced to private interpretation.</p>
+
+<p>Learning within a tradition does not require hostility toward other paths, nor does it require claiming superiority. The purpose of lineage is not to narrow thinking, but to prevent the ideas and practices from gradually being reshaped into whatever feels convenient or familiar.</p>
+
+<p>If bhakti is going to be evaluated seriously, it makes sense to understand it as the tradition itself presents it before deciding what to accept or reject.</p>
+
+<button onclick="show(9)">Continue → Module 9</button>
+</div>
+
+<!-- MODULE 9 -->
+<div class="section">
+<h2>Module 9 — The 21 Day Spiritual Fitness Challenge</h2>
+
+<p>Understanding ideas rarely changes much on its own. What makes a difference is repeated engagement. For that reason, this course proposes an optional, time-bound experiment called the 21 Day Spiritual Fitness Challenge.</p>
+
+<p>This is an invitation to run a personal, structured experiment. For a defined period, commit to a steady rhythm of practice and evaluate the results based on your own experience.</p>
+
+<p>Choose one of the following levels and maintain it steadily for 21 days.</p>
+
+<div class="quote-box">
+<strong>Level 1 — 10 minutes per day</strong>
+<p>Spend five minutes chanting and five minutes reading or listening to a short bhakti teaching.</p>
+</div>
+
+<div class="quote-box">
+<strong>Level 2 — 20 minutes per day</strong>
+<p>Spend ten minutes chanting and ten minutes hearing or reading.</p>
+</div>
+
+<div class="quote-box">
+<strong>Level 3 — 30 or more minutes per day</strong>
+<p>Spend fifteen to twenty minutes chanting, ten minutes hearing or reading, and five minutes in brief reflection or journaling.</p>
+</div>
+
+<p>The level matters less than consistency. It is better to keep a modest commitment daily than to fluctuate between intensity and absence.</p>
+
+<h3>How to Chant</h3>
+
+<p>Here is the Hare Krishna maha-mantra again for convenience:</p>
+
+<div class="quote-box">
+<strong>Maha-Mantra</strong>
+<p><em>Hare Krishna, Hare Krishna, Krishna Krishna, Hare Hare<br>Hare Rama, Hare Rama, Rama Rama, Hare Hare</em></p>
+</div>
+
+<p>The mantra can be spoken quietly to yourself or sung aloud. Some prefer a steady, meditative repetition. Others find it helpful to sing it with melody. Both are acceptable. The essential element is attentive repetition.</p>
+
+<p>Many practitioners use a strand of beads (a <em>mala</em>) to keep track of repetitions, but this is not required. You may simply set a timer and chant for the allotted time. What matters is consistency and focus rather than equipment or performance.</p>
+
+<p>A later course in this curriculum explores mantra meditation in greater depth. For the purposes of this 21-day experiment, begin simply and observe the effects of steady practice.</p>
+
+<h3>What to Hear or Read</h3>
+
+<p>Keep the hearing component manageable. Choose something consistent and avoid constantly switching sources. This might include more coursework from this curriculum, a recorded talk, or a single text you move through gradually (we recommend <em>Bhagavad Gita: Talks Between the Soul and God</em>). The aim is depth through repetition, not accumulation of material.</p>
+
+<h3>Weekly Addition</h3>
+
+<p>If possible, include one point of community contact each week. This could involve attending a kirtan, visiting a temple, meeting with a practitioner, or joining an online discussion. Shared practice often stabilizes individual effort.</p>
+
+<h3>How to Evaluate the 21 Days</h3>
+
+<p>During this period, do not measure success by emotional intensity or unusual experiences. Instead, observe patterns. Did you maintain the commitment? Did your attention shift, even slightly? Did your reactions to ordinary situations change in any noticeable way?</p>
+
+<button onclick="show(10)">Continue → Module 10</button>
+</div>
+
+<!-- MODULE 10 -->
+<div class="section">
+<h2>Module 10 — Reconnection</h2>
+
+<p>Srila Prabhupada writes in <em>The Nectar of Devotion</em> (1970):</p>
+
+<div class="quote-box">
+<strong>Quote</strong>
+<p>"The basic principle of the living condition is that we have a general propensity to love someone. No one can live without loving someone else. This propensity is present in every living being. Even an animal like a tiger has this loving propensity at least in a dormant stage, and it is certainly present in the human beings. The missing point, however, is where to repose our love so that everyone can become happy. At the present moment the human society teaches one to love his country or family or his personal self, but there is no information where to repose the loving propensity so that everyone can become happy."</p>
+</div>
+
+<p>This course has presented bhakti as a response to that "missing point." If the self is enduring and conscious, and if the Divine is also conscious, then the impulse to love is not accidental. It has an object.</p>
+
+<p>Bhakti ultimately proposes that the longing for connection and fulfillment is not solved by acquisition or achievement, but by reorienting love toward its proper object. That proposal cannot be resolved theoretically. It is tested through practice over time.</p>
+
+<p>Bhakti explains that the Divine does not force relationship. Love cannot be compelled. If we prefer to remain absorbed in temporary pursuits, we are allowed that freedom. The world provides ample opportunity for exploration and ambition. At the same time, the tradition maintains that Reality — distinguished from illusion — is always available. If and when a person becomes dissatisfied with temporary centers of meaning and wants something enduring, the relationship has not disappeared. It can be consciously reengaged.</p>
+
+<p>From this perspective, devotion is a voluntary decision about what we will center our lives around.</p>
+
+<div class="takeaways-box">
+<strong>Key Takeaways</strong>
+<ul>
+<li>You are more than your body and mind.</li>
+<li>The longing to love and be loved points somewhere real.</li>
+<li>What you place at the center of your life shapes who you become.</li>
+<li>Devotion is a shift in priority, not an escape from responsibility.</li>
+<li>Daily spiritual practice makes that shift tangible.</li>
+<li>Tradition protects the path from becoming diluted over time.</li>
+<li>Change comes through steady practice, not dramatic experiences.</li>
+<li>Our relationship with the Divine is not created by practice; it is revealed through it.</li>
+<li>The goal of bhakti is not self-improvement, but awakened love.</li>
+</ul>
+</div>
+
+<button onclick="show(11)">Continue →</button>
+</div>
+
+<!-- DISCUSSION -->
+<div class="section">
+<h2>Discussion</h2>
+
+<div class="discussion-box">
+<strong>Discussion</strong>
+<p>Please reflect on one or two key insights from the course—something that challenged or clarified your understanding—and briefly explain why it stood out. Post your response in Google Classroom, then read a few peers' reflections and respond thoughtfully to at least one.</p>
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="Nimai-Delaware/Living-Yoga-Wisdom-School"
+        data-repo-id="R_kgDOSJ4pig"
+        data-category="General"
+        data-category-id="DIC_kwDOSJ4pis4C99qn"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<button onclick="show(12)">Continue →</button>
+</div>
+
+<!-- UP NEXT -->
+<div class="section">
+<h2>Up Next</h2>
+
+<div class="upnext-box">
+<strong>In Course 2</strong>
+<p>Having explored the principles of bhakti, we now meet the teacher who embodied and transmitted them globally in the next course, "Who is Prabhupada?"</p>
+</div>
+
+<div style="background:#f4f4f6;border-left:4px solid #aaaabb;padding:20px 24px;margin:24px 0;border-radius:10px;font-size:19px;">
+<strong style="display:block;margin-bottom:8px;font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-family:Arial,sans-serif;color:#666680;">Works Cited</strong>
+<p>Prabhupada, A. C. Bhaktivedanta Swami. (1970). <em>The Nectar of Devotion</em> (p. xii–xiv). Bhaktivedanta Book Trust.</p>
+</div>
+
+<a class="lms-btn-large" href="[LMS URL]" target="_blank">← Return to Classroom</a>
+</div>
+
+</div>
+</main>
+</div>
+
+<script>
+
+/* ============================================================
+   MATCHING ACTIVITY DATA
+   To populate a matching activity, edit the object below.
+   - descriptions: array of description strings (left column)
+   - options: array of answer strings shown in the bank (right column)
+   - correct: array of accepted answer strings for each description
+              (can be multiple per description)
+   - generalFeedback: shown after Check Answers
+   - detailedFeedback: array of {desc, accepted, explanation} for each row
+   ============================================================ */
+const MATCHING_DATA = {
+  'matching-1': {
+    descriptions: [
+      'A personal being who knows, wills, and relates',
+      'A loving presence concerned with human life',
+      'A higher intelligence behind the order of the cosmos',
+      'A distant creator who set things in motion',
+      'An indwelling presence within the heart',
+      'One\'s higher self or inner divinity',
+      'A universal consciousness underlying all experience',
+      'A universal spiritual energy that pervades everything',
+      'The totality of nature or the universe itself',
+      'An impersonal moral order governing cause and effect'
+    ],
+    options: ['Bhagavān', 'Paramātmā', 'Brahman', 'Brahman realization', 'Karma'],
+    correct: [
+      ['Bhagavān'],
+      ['Bhagavān', 'Paramātmā'],
+      ['Paramātmā', 'Bhagavān'],
+      ['Bhagavān'],
+      ['Paramātmā'],
+      ['Brahman realization'],
+      ['Paramātmā'],
+      ['Brahman'],
+      ['Brahman realization'],
+      ['Karma']
+    ],
+    generalFeedback: 'If you found some of these difficult to place, that\'s by design. These descriptions come from real traditions and real seekers — and the Vedic framework is comprehensive enough to account for all of them. Each one is pointing at something genuine. Brahman, Paramātmā, and Bhagavān don\'t compete with these intuitions; they clarify them — showing where each one fits within a single, coherent picture of the Absolute.',
+    detailedFeedback: [
+      { desc: 'A personal being who knows, wills, and relates', accepted: 'Bhagavān', explanation: 'This maps most directly to Bhagavān because personhood, in the fullest sense, belongs to the personal feature of the Absolute. Knowing, willing, and relating are qualities of conscious personhood, and Bhagavān is the Absolute understood as a fully conscious person.' },
+      { desc: 'A loving presence concerned with human life', accepted: 'Bhagavān / Paramātmā', explanation: 'Both features apply here. Paramātmā is the indwelling divine presence accompanying every living being as a constant well-wisher, while Bhagavān is the Supreme Person whose love and concern extend to all conscious beings.' },
+      { desc: 'A higher intelligence behind the order of the cosmos', accepted: 'Paramātmā / Bhagavān', explanation: 'Paramātmā fits here because the Vedic texts describe the indwelling Supersoul as the one who oversees and guides the workings of the cosmos from within. Bhagavān also applies since that cosmic order ultimately originates from the Supreme Person.' },
+      { desc: 'A distant creator who set things in motion', accepted: 'Bhagavān', explanation: 'This description reflects a common theological intuition, though it is only a partial picture. The Vedic tradition would affirm that Bhagavān is the creator and that He does not interfere with the free will of living beings. But the picture of a distant, uninvolved God stops short of the full description. Bhagavān remains intimately present and personally concerned with every living being.' },
+      { desc: 'An indwelling presence within the heart', accepted: 'Paramātmā', explanation: 'This is the clearest match in the exercise. Paramātmā refers specifically to the divine presence within the heart of every living being, accompanying each soul as witness, guide, and well-wisher.' },
+      { desc: 'One\'s higher self or inner divinity', accepted: 'Brahman realization', explanation: 'This description reflects the insight that we are not the material body, that something deeper and more essential exists within us. That awakening corresponds to Brahman realization, the recognition of the spiritual nature of the self. It is a genuine and important realization, though the tradition suggests it is not the complete picture.' },
+      { desc: 'A universal consciousness underlying all experience', accepted: 'Paramātmā', explanation: 'The sense of a single conscious presence pervading all experience points toward Paramātmā, the divine awareness present within all beings and throughout creation. This intuition is real and the Vedic framework honors it.' },
+      { desc: 'A universal spiritual energy that pervades everything', accepted: 'Brahman', explanation: 'Brahman refers to the all-pervading spiritual reality that underlies existence. The sense of a universal energy or light present throughout creation corresponds to this feature of the Absolute.' },
+      { desc: 'The totality of nature or the universe itself', accepted: 'Brahman realization', explanation: 'Identifying ultimate reality with nature or the universe reflects a form of Brahman realization, the recognition that everything emanates from one divine source. The Vedic tradition would affirm the intuition of unity while inviting a deeper inquiry into the conscious nature of that source.' },
+      { desc: 'An impersonal moral order governing cause and effect', accepted: 'Karma', explanation: 'This description points to karma rather than to any of the three features of the Absolute. Karma refers to the lawful structure built into material existence whereby actions produce corresponding results. It is real and important, but it is a principle operating within creation rather than a description of the Absolute itself.' }
+    ]
+  }
+};
+
+/* ============================================================
+   MATCHING ENGINE — do not edit below this line
+   ============================================================ */
+const matchingState = {};
+
+function initMatching(id) {
+  const data = MATCHING_DATA[id];
+  if (!data) return;
+  matchingState[id] = { answers: new Array(data.descriptions.length).fill(null), dragValue: null, selectedRow: null };
+
+  const rowsEl = document.getElementById(id + '-rows');
+  const bankEl = rowsEl.closest('.matching-workspace').querySelector('.matching-bank');
+
+  // Clear any previously injected content (for reset)
+  rowsEl.innerHTML = '';
+  // Remove chips but keep label
+  Array.from(bankEl.children).forEach(c => { if (!c.classList.contains('matching-bank-label')) c.remove(); });
+
+  // Build description rows
+  data.descriptions.forEach((desc, i) => {
+    const row = document.createElement('div');
+    row.className = 'matching-row';
+
+    const descEl = document.createElement('div');
+    descEl.className = 'matching-description';
+    descEl.textContent = desc;
+
+    const drop = document.createElement('div');
+    drop.className = 'matching-drop-zone';
+    drop.dataset.index = i;
+    drop.textContent = 'Drop here';
+    drop.setAttribute('aria-label', 'Drop zone for: ' + desc);
+
+    // Drag-and-drop events
+    drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('drag-over'); });
+    drop.addEventListener('dragleave', () => drop.classList.remove('drag-over'));
+    drop.addEventListener('drop', e => {
+      e.preventDefault();
+      drop.classList.remove('drag-over');
+      const val = matchingState[id].dragValue;
+      if (val) setAnswer(id, i, val);
+    });
+
+    // Click-to-select flow
+    drop.addEventListener('click', () => {
+      const sel = matchingState[id].selectedRow;
+      if (sel !== null && sel !== i) {
+        // clicking a different drop zone while one is selected: deselect
+        clearRowSelection(id);
+      } else if (matchingState[id].answers[i]) {
+        clearAnswer(id, i);
+      }
+    });
+
+    row.appendChild(descEl);
+    row.appendChild(drop);
+    rowsEl.appendChild(row);
+  });
+
+  // Build answer chips
+  data.options.forEach(opt => {
+    const chip = document.createElement('div');
+    chip.className = 'match-chip';
+    chip.textContent = opt;
+    chip.draggable = true;
+    chip.addEventListener('dragstart', () => { matchingState[id].dragValue = opt; });
+    chip.addEventListener('dragend', () => { matchingState[id].dragValue = null; });
+    chip.addEventListener('click', () => {
+      const sel = matchingState[id].selectedRow;
+      if (sel !== null) {
+        setAnswer(id, sel, opt);
+        clearRowSelection(id);
+      } else {
+        // Select this chip and highlight rows
+        clearChipSelection(id);
+        chip.style.outline = '2px solid #3a5ee8';
+        matchingState[id].selectedChip = opt;
+      }
+    });
+    bankEl.appendChild(chip);
+  });
+
+  // Click on description selects the row
+  rowsEl.querySelectorAll('.matching-description').forEach((el, i) => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', () => {
+      const chipSel = matchingState[id].selectedChip;
+      if (chipSel) {
+        setAnswer(id, i, chipSel);
+        clearChipSelection(id);
+      } else {
+        clearRowSelection(id);
+        matchingState[id].selectedRow = i;
+        el.style.outline = '2px solid #3a5ee8';
+      }
+    });
+  });
+}
+
+function clearRowSelection(id) {
+  matchingState[id].selectedRow = null;
+  const rowsEl = document.getElementById(id + '-rows');
+  rowsEl.querySelectorAll('.matching-description').forEach(el => el.style.outline = '');
+}
+
+function clearChipSelection(id) {
+  matchingState[id].selectedChip = null;
+  const bankEl = document.getElementById(id + '-rows').closest('.matching-workspace').querySelector('.matching-bank');
+  bankEl.querySelectorAll('.match-chip').forEach(c => c.style.outline = '');
+}
+
+function setAnswer(id, index, value) {
+  matchingState[id].answers[index] = value;
+  renderDropZone(id, index);
+  // Clear any checked state
+  resetCheckedState(id);
+}
+
+function clearAnswer(id, index) {
+  matchingState[id].answers[index] = null;
+  renderDropZone(id, index);
+  resetCheckedState(id);
+}
+
+function renderDropZone(id, index) {
+  const rowsEl = document.getElementById(id + '-rows');
+  const drop = rowsEl.querySelectorAll('.matching-drop-zone')[index];
+  const val = matchingState[id].answers[index];
+
+  drop.classList.remove('filled', 'correct', 'incorrect', 'drag-over');
+  drop.innerHTML = '';
+
+  if (val) {
+    drop.classList.add('filled');
+    drop.textContent = val;
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'remove-match';
+    removeBtn.textContent = '✕';
+    removeBtn.setAttribute('aria-label', 'Remove match');
+    removeBtn.addEventListener('click', e => { e.stopPropagation(); clearAnswer(id, index); });
+    drop.appendChild(removeBtn);
+  } else {
+    drop.textContent = 'Drop here';
+  }
+}
+
+function resetCheckedState(id) {
+  const rowsEl = document.getElementById(id + '-rows');
+  rowsEl.querySelectorAll('.matching-drop-zone').forEach(d => d.classList.remove('correct', 'incorrect'));
+  document.getElementById(id + '-general-feedback').style.display = 'none';
+  document.getElementById(id + '-detailed-feedback').style.display = 'none';
+  const afterGeneral = document.getElementById(id + '-after-general');
+  if (afterGeneral) afterGeneral.style.display = 'none';
+  const afterDetailed = document.getElementById(id + '-after-detailed');
+  if (afterDetailed) afterDetailed.style.display = 'none';
+}
+
+function checkMatching(id) {
+  const data = MATCHING_DATA[id];
+  const state = matchingState[id];
+  const rowsEl = document.getElementById(id + '-rows');
+  const drops = rowsEl.querySelectorAll('.matching-drop-zone');
+
+  let anyAnswered = false;
+  drops.forEach((drop, i) => {
+    const answer = state.answers[i];
+    drop.classList.remove('correct', 'incorrect');
+    if (answer) {
+      anyAnswered = true;
+      const accepted = data.correct[i];
+      if (accepted.includes(answer)) {
+        drop.classList.add('correct');
+      } else {
+        drop.classList.add('incorrect');
+      }
+    }
+  });
+
+  if (!anyAnswered) {
+    const fb = document.getElementById(id + '-general-feedback');
+    fb.style.display = 'block';
+    fb.innerHTML = '<strong>Nothing to check</strong>Drag at least one answer before checking.';
+    return;
+  }
+
+  const fb = document.getElementById(id + '-general-feedback');
+  fb.style.display = 'block';
+  fb.innerHTML = '<strong>Feedback</strong>' + data.generalFeedback;
+
+  const afterGeneral = document.getElementById(id + '-after-general');
+  if (afterGeneral) afterGeneral.style.display = 'flex';
+}
+
+function showDetailedFeedback(id) {
+  const data = MATCHING_DATA[id];
+  const fb = document.getElementById(id + '-detailed-feedback');
+  fb.style.display = 'block';
+  fb.innerHTML = '<strong>Detailed Feedback</strong>' +
+    data.detailedFeedback.map(item =>
+      `<div class="feedback-item">
+        <div class="feedback-item-desc">${item.desc}</div>
+        <div class="feedback-item-answer">✓ ${item.accepted}</div>
+        <div>${item.explanation}</div>
+      </div>`
+    ).join('');
+
+  const afterDetailed = document.getElementById(id + '-after-detailed');
+  if (afterDetailed) afterDetailed.style.display = 'block';
+}
+
+function resetMatching(id) {
+  matchingState[id] = { answers: new Array(MATCHING_DATA[id].descriptions.length).fill(null), dragValue: null, selectedRow: null, selectedChip: null };
+  initMatching(id);
+  document.getElementById(id + '-general-feedback').style.display = 'none';
+  document.getElementById(id + '-detailed-feedback').style.display = 'none';
+  const afterGeneral = document.getElementById(id + '-after-general');
+  if (afterGeneral) afterGeneral.style.display = 'none';
+  const afterDetailed = document.getElementById(id + '-after-detailed');
+  if (afterDetailed) afterDetailed.style.display = 'none';
+}
+
+/* ============================================================
+   NAV & SECTION CONTROL
+   ============================================================ */
+function show(i) {
+  document.querySelectorAll('.section').forEach((s,idx) => s.classList.toggle('active', idx===i));
+
+  document.querySelectorAll('.module-list button').forEach((n,idx) => {
+    n.classList.toggle('active', idx===i);
+    n.setAttribute('aria-current', idx===i ? 'page' : 'false');
+  });
+
+  document.querySelectorAll('#mobile-nav button').forEach((n,idx) => {
+    n.classList.toggle('active', idx===i);
+    n.setAttribute('aria-current', idx===i ? 'page' : 'false');
+  });
+
+  // Reveal topo map on final screen
+  document.getElementById('topo-bg').classList.toggle('revealed', i === 12);
+
+  window.scrollTo({top:0, behavior:'smooth'});
+
+  const mobileNav = document.getElementById('mobile-nav');
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.querySelector('.mobile-menu-btn').setAttribute('aria-label', 'Open menu');
+  document.querySelector('.mobile-menu-btn').setAttribute('aria-expanded', 'false');
+
+  const activeSection = document.querySelectorAll('.section')[i];
+  const heading = activeSection.querySelector('h1, h2');
+  if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus(); }
+}
+
+function toggleNav() {
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  const isOpen = nav.classList.toggle('open');
+  nav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+}
+
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
+    nav.classList.remove('open');
+    nav.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open menu');
+  }
+});
+
+/* ============================================================
+   RADIO KNOWLEDGE CHECK
+   Duplicate this function for each quiz.
+   Change: radio name, result element id, correct letter, feedback text.
+   ============================================================ */
+function checkQ1() {
+  const sel = document.querySelector('input[name="q1"]:checked');
+  const result = document.getElementById('q1-result');
+  if (!sel) { result.style.display='block'; result.style.color='#777'; result.textContent='Please select an answer.'; return; }
+  if (sel.value === 'C') { /* <-- set correct answer letter here */
+    result.style.color = '#1a7a40';
+    result.textContent = '✓ Correct!';
+  } else {
+    result.style.color = '#b03030';
+    result.textContent = '✗ Not quite — try again.';
+  }
+  result.style.display = 'block';
+}
+
+/* ============================================================
+   INIT — runs on page load
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', function() {
+  initMatching('matching-1');
+});
+
+</script>
+
+</body>
+</html>
